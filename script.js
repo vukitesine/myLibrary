@@ -10,6 +10,9 @@ function Book(title, author, page) {
 function addToLibrary(title, author, page) {
     const newBook = new Book(title, author, page)
     myLibrary.push(newBook);
+
+    displayBook();
+
 }
 
 function displayBook() {
@@ -20,9 +23,12 @@ function displayBook() {
         const bookElement = document.createElement('div')
         bookElement.classList.add('book')
 
-        bookElement.innerHTML = 
-        <h2></h2>
-        <p></p>
-        <p></p>
+        bookElement.innerHTML = `
+        <h2>${book.title}</h2>
+        <p>${book.author}</p>
+        <p>${book.page}</p>`
+
+        libraryDisplay.appendChild(bookElement);
     })
 }
+addToLibrary('test', 'test', 123)
