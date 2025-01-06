@@ -12,5 +12,17 @@ function addToLibrary(title, author, page) {
     myLibrary.push(newBook);
 }
 
-addToLibrary('test', 'test', 23);
-console.log(myLibrary)
+function displayBook() {
+    const libraryDisplay = document.querySelector('.library-container')
+    libraryDisplay.innerHTML = ''
+
+    myLibrary.forEach((book) => {
+        const bookElement = document.createElement('div')
+        bookElement.classList.add('book')
+
+        bookElement.innerHTML = 
+        <h2></h2>
+        <p></p>
+        <p></p>
+    })
+}
