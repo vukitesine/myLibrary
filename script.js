@@ -1,6 +1,13 @@
 // create an array where all book objects will be stored
 myLibrary = [];
 
+const modal = document.querySelector('#modal');
+const openModalBtn = document.querySelector('#open-modal-btn')
+const closeModalBtn = modal.querySelector('#close-modal-btn')
+const addBookBtn = modal.querySelector('#submit')
+
+
+
 function Book(title, author, page) {
     this.title = title;
     this.author = author;
@@ -31,4 +38,27 @@ function displayBook() {
         libraryDisplay.appendChild(bookElement);
     })
 }
-addToLibrary('test', 'test', 123)
+
+openModalBtn.addEventListener('click', () => {
+    modal.showModal();
+});
+
+closeModalBtn.addEventListener('click', () => {
+    modal.close();
+})
+
+addBookBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const title = modal.querySelector('#title').value
+    const author = modal.querySelector('#author').value
+    const page = modal.querySelector('#page').value
+
+    addToLibrary(title, author, page);
+
+    title = ''
+    author = ''
+    page = ''
+    
+    modal.close();
+})  
