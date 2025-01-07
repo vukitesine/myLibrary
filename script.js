@@ -33,7 +33,8 @@ function displayBook() {
         bookElement.innerHTML = `
         <h2>${book.title}</h2>
         <p>${book.author}</p>
-        <p>${book.page}</p>`
+        <p>${book.page}</p>
+        <button id='remove-book'>Remove Book</button>`
 
         libraryDisplay.appendChild(bookElement);
     })
@@ -53,12 +54,13 @@ addBookBtn.addEventListener('click', (event) => {
     const title = modal.querySelector('#title').value
     const author = modal.querySelector('#author').value
     const page = modal.querySelector('#page').value
-
+    modal.close();
     addToLibrary(title, author, page);
-
+    
     title = ''
     author = ''
     page = ''
     
-    modal.close();
-})  
+})
+
+addToLibrary('The Godfather', 'Mario Puzo', '456')
