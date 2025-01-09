@@ -96,3 +96,5 @@ function toggleStatus(button) {
 
 
 addToLibrary('The Godfather', 'Mario Puzo', '456');
+addToLibrary('The Godfather', 'Mario Puzo', '456');
+addToLibrary('The Godfather', 'Mario Puzo', '456');

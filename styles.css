@@ -11,7 +11,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px darkgray solid;
+    background-color: rgba(46, 46, 46, 0.075);
     padding: 1em;
 }
 
@@ -67,6 +67,81 @@ footer {
 
 .book {
     display: flex;
+    border: 2px solid black;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background-color: rgba(46, 46, 46, 0.075);
+    border-radius: 40px;
 }
+
+/* Style for the dialog */
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    width: 100%;
+    background-color: white;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Start hidden, will be shown via JS */
+    z-index: 1000; /* Make sure it's above other content */
+}
+
+/* When the dialog is shown, display it as a block */
+dialog[open] {
+    display: block;
+}
+
+/* Backdrop for the dialog */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: blur(10px);
+}
+
+/* Style for form elements inside the dialog */
+dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+dialog input,
+dialog button {
+    padding: 1em;
+    font-size: 1em;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+dialog input:focus,
+dialog button:focus {
+    outline: none;
+    border-color: darkgreen;
+}
+
+dialog button {
+    background-color: darkgreen;
+    color: white;
+    cursor: pointer;
+}
+
+dialog button:hover {
+    background-color: green;
+}
+
+dialog button[type="submit"] {
+    background-color: darkgreen;
+}
+
+dialog button#close-modal-btn {
+    background-color: brown;
+}
+
+dialog button#close-modal-btn:hover {
+    background-color: darkred;
+}
+
