@@ -1,5 +1,10 @@
 body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;  /* Remove default margin to ensure full height usage */
 }
 
 header {
@@ -7,6 +12,23 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 3px darkgray solid;
+    padding: 1em;
+}
+
+.library-container {
+    flex-grow: 1;  /* Allow content to take available space */
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 15px;
+    padding: 1em;
+}
+
+footer {
+    background-color: darkgreen;
+    color: white;
+    text-align: center;
     padding: 1em;
 }
 
@@ -41,4 +63,10 @@ header {
     border: none;
     border-radius: 12px;
     padding: 1em;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

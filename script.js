@@ -31,8 +31,9 @@ function displayBook() {
             <h2>${book.title}</h2>
             <p>${book.author}</p>
             <p>${book.page}</p>
+            <div>
             <button class='status'>Read</button>
-            <button class='remove-book' data-index="${index}">Remove Book</button>
+            <button class='remove-book' data-index="${index}">Remove Book</button></div>
             `;
 
         libraryDisplay.appendChild(bookElement);
